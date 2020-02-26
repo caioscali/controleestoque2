@@ -235,30 +235,22 @@ endif;
                             </div>
                         </div>
                         <div class="row col-12">
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label>Descricao:</label>
                                     <input type="text" class="form-control" name="descricao" required="required">
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label>Marca:</label>
                                     <input type="text" class="form-control" name="marca" required="required">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row col-12">
-                            <div class="col-6">
+                             <div class="col-4">
                                 <div class="form-group">
                                     <label>Número de Patrimonio:</label>
                                     <input type="text" class="form-control" name="numeroPatrimonio" required="required">
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label>Quantidade:</label>
-                                    <input type="text" class="form-control" name="quantidade"  pattern="[0-9]+" required="required">
                                 </div>
                             </div>
                         </div>
@@ -333,36 +325,22 @@ endif;
                             </div>
                         </div>
                         <div class="row col-12">
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label>Descricao:</label>
                                     <input type="text" class="form-control" id="text_descricao" name="text_descricao" required="required">
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label>Marca:</label>
                                     <input type="text" class="form-control" id="text_marca" name="text_marca" required="required">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row col-12">
                             <div class="col-4">
                                 <div class="form-group">
                                     <label>Número de Patrimonio:</label>
                                     <input type="text" class="form-control" id="text_numeroPatrimonio" name="text_numeroPatrimonio" required="required">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <label>Quantidade:</label>
-                                    <input type="text" class="form-control" id="text_quantidade" name="text_quantidade" pattern="[0-9]+" required="required">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <label>Data Cadastro:</label>
-                                    <input type="text" class="form-control" id="text_dataCadastro" name="text_dataCadastro" pattern="\d{2}/\d{2}/\d{4}$" required="required">
                                 </div>
                             </div>
                         </div>
