@@ -103,7 +103,7 @@ endif;
             </tr>
         </thead>
         <?php
-        foreach ($estoque->findAllEstoque() as $key => $value) :
+        foreach ($departamentoproduto->findAllEstoque() as $key => $value) :
         ?>
             <tbody>
                 <tr>
