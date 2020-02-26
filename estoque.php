@@ -81,7 +81,7 @@ if (isset($_POST['alterar'])) :
             </div>
         </div>
 
-<?php }
+<?php 
 }
 
 endif;
