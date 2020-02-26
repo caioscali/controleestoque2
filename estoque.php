@@ -61,7 +61,7 @@ if (isset($_POST['alterar'])) :
     $departamentoproduto->setIdDepartamento($idDeparteamento);
     $departamentoproduto->setDataCadastro($dataCadastro);
 
-    if ($departamentoproduto->update($idDepartamentoProduto)) {
+    if ($departamentoproduto->update($id)) {
 ?>
         <div class="row col-12">
             <div class="col-3"></div>
