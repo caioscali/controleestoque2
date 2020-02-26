@@ -86,13 +86,13 @@ if (isset($_POST['alterar'])) :
     $marca = $_POST['text_marca'];
     $numeroPatrimonio = $_POST['text_numeroPatrimonio'];
     $idCategoria = $_POST['text_categoriaSelecionada'];
-    
+
     $produto->setDescricao($descricao);
     $produto->setMarca($marca);
     $produto->setNumeroPatrimonio($numeroPatrimonio);
     $produto->setIdCategoria($idCategoria);
     if ($produto->update($id)) {
-     
+
         ?>
         <div class="row col-12">
             <div class="col-3"></div>
@@ -139,14 +139,12 @@ endif;
                     <td><?php echo $value->numeroPatrimonio; ?></td>
                     <td><?php echo $value->categoria; ?></td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal_alterar_produto" onclick="load_modal('<?php echo $value->descricao; ?>','<?php echo $value->marca; ?>',
-                         '<?php echo $value->numeroPatrimonio; ?>',
-                         '<?php echo $value->idCategoria; ?>',
-                         '<?php echo $value->quantidade; ?>',
-                         '<?php echo $value->dataCadastro; ?>',
-                         '<?php echo $value->idDepartamento; ?>',
-                         '<?php echo $value->id; ?>',
-                         '<?php echo $value->idDepartamentoProduto; ?>')">Alterar</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal_alterar_produto" onclick="load_modal(
+                            '<?php echo $value->descricao; ?>',
+                            '<?php echo $value->marca; ?>',
+                            '<?php echo $value->numeroPatrimonio; ?>',
+                            '<?php echo $value->idCategoria; ?>',
+                            '<?php echo $value->id; ?>',')">Alterar</button>
                          <form class="form_excluir" method="post" style="float: left; margin: 0 15px">
                             <input type="hidden" name="id" value="<?php echo $value->id; ?>">
                             <button name="excluir" type="submit"  class="btn btn-danger">Excluir</button>
