@@ -130,7 +130,7 @@ endif;
             </tr>
         </thead>
         <?php
-        foreach ($produto->findAll() as $key => $value) :
+        foreach ($produto->findAllProdutos() as $key => $value) :
             ?>
             <tbody>
                 <tr>
