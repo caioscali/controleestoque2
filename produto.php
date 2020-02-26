@@ -144,7 +144,7 @@ endif;
                             '<?php echo $value->marca; ?>',
                             '<?php echo $value->numeroPatrimonio; ?>',
                             '<?php echo $value->idCategoria; ?>',
-                            '<?php echo $value->id; ?>',')">Alterar</button>
+                            '<?php echo $value->id; ?>')">Alterar</button>
                             <form class="form_excluir" method="post" style="float: left; margin: 0 15px">
                                 <input type="hidden" name="id" value="<?php echo $value->id; ?>">
                                 <button name="excluir" type="submit"  class="btn btn-danger">Excluir</button>
