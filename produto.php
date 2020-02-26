@@ -158,10 +158,6 @@ endif;
                     <td><?php echo $value->marca; ?></td>
                     <td><?php echo $value->numeroPatrimonio; ?></td>
                     <td><?php echo $value->categoria; ?></td>
-                    <td><?php echo $value->quantidade; ?></td>
-                    <td><?php echo $value->dataCadastro; ?></td>
-                    <td><?php echo $value->departamento; ?></td>
-                    <td><?php echo $value->empresa; ?></td>
                     <td>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal_alterar_produto" onclick="load_modal('<?php echo $value->descricao; ?>','<?php echo $value->marca; ?>',
                          '<?php echo $value->numeroPatrimonio; ?>',

@@ -122,10 +122,6 @@ endif;
                          '<?php echo $value->idDepartamento; ?>',
                          '<?php echo $value->id; ?>',
                          '<?php echo $value->idDepartamentoProduto; ?>')">Alterar</button>
-                        <form class="form_excluir" method="post" style="float: left; margin: 0 15px">
-                            <input type="hidden" name="id" value="<?php echo $value->id; ?>">
-                            <button name="excluir" type="submit"  class="btn btn-danger">Excluir</button>
-                        </form>
                     </td>
                 </tr>
             </tbody>
