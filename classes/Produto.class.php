@@ -54,8 +54,7 @@ class Produto extends Crud
 
 	public function findAllProdutos()
 	{
-		$sql  = "SELECT p.id AS id, p.descricao AS descricao, p.marca AS marca, p.numeroPatrimonio AS numeroPatrimonio, c.id AS idCategoria, c.descricao AS categoria, 
-					FROM produto AS p
+		$sql  = "SELECT p.id AS id, p.descricao AS descricao, p.marca AS marca, p.numeroPatrimonio AS numeroPatrimonio, c.id AS idCategoria, c.descricao AS categoria					FROM produto AS p
 					INNER JOIN categoria AS c ON p.idCategoria = c.id
 					WHERE p.desativado = 0";
 		$stmt = DB::prepare($sql);
