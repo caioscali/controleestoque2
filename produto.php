@@ -184,7 +184,7 @@ endif;
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <br /><br />
+                                        <br />
                                         <a type="submit" class="btn btn-primary" href="categorias">Cadastrar Categoria</a>
                                     </div>
                                 </div>
