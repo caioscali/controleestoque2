@@ -235,7 +235,7 @@ endif;
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Produto:</label>
-                                    <select class="form-control" id="text_categoriaSelecionado" name="text_produtoSelecionado" required="required">
+                                    <select class="form-control" id="text_produtoSelecionado" name="text_produtoSelecionado" required="required">
                                         <?php
                                         foreach ($produto->findAll() as $key => $val) : ?>
                                             <option value="<?php echo ($val->id); ?>"> <?php echo $val->descricao; ?> </option>
