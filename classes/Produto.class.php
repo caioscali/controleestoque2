@@ -52,22 +52,6 @@ class Produto extends Crud
 		$this->idCategoria = $idCategoria;
 	}
 
-	public function findAllProdutos()
-	{
-		$sql  = "SELECT p.id AS id, p.descricao AS descricao, p.marca AS marca, p.numeroPatrimonio AS numeroPatrimonio,
-					c.id AS idCategoria, c.descricao AS categoria, dp.id AS idDepartamentoProduto,
-					date_format(str_to_date(dp.dataCadastro, '%Y-%m-%d'), '%d/%m/%Y') AS dataCadastro,
-			 		dp.quantidade AS quantidade, d.id AS idDepartamento, d.nome AS departamento, d.empresa AS empresa 
-					FROM produto AS p
-					INNER JOIN categoria AS c ON p.idCategoria = c.id
-					INNER JOIN departamentoprodutos AS dp ON p.id = dp.idProduto	
-					INNER JOIN departamento AS d ON dp.idDepartamento = d.id  
-					WHERE p.desativado = 0";
-		$stmt = DB::prepare($sql);
-		$stmt->execute();
-		return $stmt->fetchAll();
-	}
-
 	public function insert()
 	{
 		$desativado = 0; // 0 para false e 1 para true
