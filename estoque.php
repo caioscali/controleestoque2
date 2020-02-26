@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Produtos</h1>
+    <h1 class="h2">Estoque</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group mr-2">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal_cadastrar_produto">Cadastrar Novo Produto</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal_cadastrar_produto">Cadastrar Novo Produto no Estoque</button>
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@ if (isset($_POST['cadastrar'])) :
             <div class="col-3"></div>
             <div class="alert alert-success col-4">
                 <button type="button" class="close" data-dismiss="alert">X</button>
-                <h6>Produto Cadastrado com Sucesso!</h6>
+                <h6>Estoque Cadastrado com Sucesso!</h6>
             </div>
         </div>
 <?php
@@ -39,7 +39,7 @@ if (isset($_POST['cadastrar'])) :
             <div class="col-3"></div>
             <div class="alert alert-danger col-4">
                 <button type="button" class="close" data-dismiss="alert">X</button>
-                <h6>Erro ao Cadastrar o Produto! Entre em contato com o suporte!</h6>
+                <h6>Erro ao Cadastrar o Estoque! Entre em contato com o suporte!</h6>
             </div>
         </div>
 
@@ -67,7 +67,7 @@ if (isset($_POST['alterar'])) :
             <div class="col-3"></div>
             <div class="alert alert-success col-4">
                 <button type="button" class="close" data-dismiss="alert">X</button>
-                <h6>Produto Alterado com Sucesso!</h6>
+                <h6>Estoque Alterado com Sucesso!</h6>
             </div>
         </div>
 <?php
@@ -77,7 +77,7 @@ if (isset($_POST['alterar'])) :
             <div class="col-3"></div>
             <div class="alert alert-danger col-4">
                 <button type="button" class="close" data-dismiss="alert">X</button>
-                <h6>Erro ao Alterar o Produto! Entre em contato com o suporte!</h6>
+                <h6>Erro ao Alterar o Estoque! Entre em contato com o suporte!</h6>
             </div>
         </div>
 
@@ -121,7 +121,7 @@ endif;
                          '<?php echo $value->dataCadastro; ?>',
                          '<?php echo $value->idDepartamento; ?>',
                          '<?php echo $value->id; ?>',
-                         '<?php echo $value->idProduto; ?>')">Alterar</button>
+                         '<?php echo $value->idDepartamentoProduto; ?>')">Alterar</button>
                         <form class="form_excluir" method="post" style="float: left; margin: 0 15px">
                             <input type="hidden" name="id" value="<?php echo $value->id; ?>">
                             <button name="excluir" type="submit"  class="btn btn-danger">Excluir</button>
@@ -163,7 +163,7 @@ endif;
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Produto:</label>
-                                    <select class="form-control" name="produtoSelecionada" required="required">
+                                    <select class="form-control" name="produtoSelecionado" required="required">
                                         <?php
                                         foreach ($produto->findAll() as $key => $val) : ?>
                                             <option value="<?php echo ($val->id); ?>"> <?php echo $val->descricao; ?> </option>
@@ -239,7 +239,7 @@ endif;
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Produto:</label>
-                                    <select class="form-control" id="text_categoriaSelecionada" name="text_produtoSelecionada" required="required">
+                                    <select class="form-control" id="text_categoriaSelecionado" name="text_produtoSelecionado" required="required">
                                         <?php
                                         foreach ($produto->findAll() as $key => $val) : ?>
                                             <option value="<?php echo ($val->id); ?>"> <?php echo $val->descricao; ?> </option>
