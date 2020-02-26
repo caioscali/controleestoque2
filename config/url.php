@@ -6,8 +6,8 @@ $subPagina2   = isset( $_GET['sp2'] ) && trim( $_GET['sp2'] ) != '' ? trim( $_GE
 $numeroPagina = isset( $_GET['pg'] ) && trim( $_GET['pg'] ) != '' ? trim( $_GET['pg'] ) : '';
 $erro         = false;
 
-if(($paginaAtual=='' || $paginaAtual=='home') && file_exists('produto.php')){
-    $incluir = 'produto.php';
+if(($paginaAtual=='' || $paginaAtual=='home' || $paginaAtual=='estoque') && file_exists('estoque.php')){
+    $incluir = 'estoque.php';
 }elseif($paginaAtual=='departamentos'){
     $incluir = 'departamento.php';
 }elseif($paginaAtual=='categorias'){

@@ -8,6 +8,12 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="estoque">
+          <span data-feather="box"></span>
+          Estoque
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="produtos">
           <span data-feather="box"></span>
           Produtos
