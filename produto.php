@@ -190,19 +190,6 @@ endif;
                         <div class="row col-12">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>Departamento:</label>
-                                    <select class="form-control" name="departamentoSelecionado" required="required">
-                                        <?php
-                                        foreach ($departamento->findAll() as $key => $val) : ?>
-                                            <option value="<?php echo ($val->id); ?>"> <?php echo $val->nome . ' - ', $val->empresa; ?> </option>
-                                        <?php
-                                        endforeach; ?>
-
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
                                     <label>Categoria:</label>
                                     <select class="form-control" name="categoriaSelecionada" required="required">
                                         <?php
@@ -213,17 +200,7 @@ endif;
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row col-12">
-                            <div class="col-1"></div>
-                            <div class="col-5">
-                                <div class="form-group">
-                                    <label></label>
-                                    <a type="submit" class="btn btn-primary" href="departamentos">Cadastrar Departamento</a>
-                                </div>
-                            </div>
-                            <div class="col-1"></div>
-                            <div class="col-5">
+                            <div class="col-6">
                                 <div class="form-group">
                                     <label></label>
                                     <a type="submit" class="btn btn-primary" href="categorias">Cadastrar Categoria</a>
@@ -279,19 +256,6 @@ endif;
                         <div class="row col-12">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>Departamento:</label>
-                                    <select class="form-control" id="text_departamentoSelecionado" name="text_departamentoSelecionado" required="required">
-                                        <option>Selecione o Departamento</option>
-                                        <?php
-                                        foreach ($departamento->findAll() as $key => $val) : ?>
-                                            <option value="<?php echo ($val->id); ?>"> <?php echo $val->nome . ' - ', $val->empresa; ?> </option>
-                                        <?php
-                                        endforeach; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
                                     <label>Categoria:</label>
                                     <select class="form-control" id="text_categoriaSelecionada" name="text_categoriaSelecionada" required="required">
                                         <option>Selecione a Categoria</option>
@@ -303,17 +267,7 @@ endif;
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row col-12">
-                            <div class="col-1"></div>
-                            <div class="col-5">
-                                <div class="form-group">
-                                    <label></label>
-                                    <a type="submit" class="btn btn-primary" href="departamentos">Cadastrar Departamento</a>
-                                </div>
-                            </div>
-                            <div class="col-1"></div>
-                            <div class="col-5">
+                            <div class="col-6">
                                 <div class="form-group">
                                     <label></label>
                                     <a type="submit" class="btn btn-primary" href="categorias">Cadastrar Categoria</a>
