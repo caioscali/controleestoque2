@@ -57,7 +57,7 @@ if (isset($_POST['alterar'])) :
     $dataCadastro = $_POST['text_dataCadastro'];
 
     $departamentoproduto->setQuantidade($quantidade);
-    $departamentoproduto->setIdProduto($id);
+    $departamentoproduto->setIdProduto($idProduto);
     $departamentoproduto->setIdDepartamento($idDeparteamento);
     $departamentoproduto->setDataCadastro($dataCadastro);
 
