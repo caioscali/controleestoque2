@@ -20,40 +20,34 @@ if (isset($_POST['cadastrar'])) :
     $marca = $_POST['marca'];
     $numeroPatrimonio = $_POST['numeroPatrimonio'];
     $idCategoria = $_POST['categoriaSelecionada'];
-    $idDeparteamento = $_POST['departamentoSelecionado'];
-    $quantidade = $_POST['quantidade'];
-
+    
     $produto->setDescricao($descricao);
     $produto->setMarca($marca);
     $produto->setNumeroPatrimonio($numeroPatrimonio);
     $produto->setIdCategoria($idCategoria);
 
-    if ($idProduto = $produto->insert()) {
-        $departamentoproduto->setQuantidade($quantidade);
-        $departamentoproduto->setIdProduto($idProduto);
-        $departamentoproduto->setIdDepartamento($idDeparteamento);
+    if ($produto->insert()) {
 
-        if ($departamentoproduto->insert()) {
-?>
-            <div class="row col-12">
-                <div class="col-3"></div>
-                <div class="alert alert-success col-4">
-                    <button type="button" class="close" data-dismiss="alert">X</button>
-                    <h6>Produto Cadastrado com Sucesso!</h6>
-                </div>
-            </div>
-        <?php
-        } else {
         ?>
-            <div class="row col-12">
-                <div class="col-3"></div>
-                <div class="alert alert-danger col-4">
-                    <button type="button" class="close" data-dismiss="alert">X</button>
-                    <h6>Erro ao Cadastrar o Produto! Entre em contato com o suporte!</h6>
-                </div>
+        <div class="row col-12">
+            <div class="col-3"></div>
+            <div class="alert alert-success col-4">
+                <button type="button" class="close" data-dismiss="alert">X</button>
+                <h6>Produto Cadastrado com Sucesso!</h6>
             </div>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div class="row col-12">
+            <div class="col-3"></div>
+            <div class="alert alert-danger col-4">
+                <button type="button" class="close" data-dismiss="alert">X</button>
+                <h6>Erro ao Cadastrar o Produto! Entre em contato com o suporte!</h6>
+            </div>
+        </div>
 
-        <?php }
+        <?php 
     }
 
 endif;
@@ -64,24 +58,24 @@ if (isset($_POST['excluir'])) :
 
     if ($produto->desativar($id)) {
         ?>
-            <div class="row col-12">
-                <div class="col-3"></div>
-                <div class="alert alert-success col-4">
-                    <button type="button" class="close" data-dismiss="alert">X</button>
-                    <h6>Produto Excluido com Sucesso!</h6>
-                </div>
+        <div class="row col-12">
+            <div class="col-3"></div>
+            <div class="alert alert-success col-4">
+                <button type="button" class="close" data-dismiss="alert">X</button>
+                <h6>Produto Excluido com Sucesso!</h6>
             </div>
+        </div>
         <?php
-        } else {
+    } else {
         ?>
-            <div class="row col-12">
-                <div class="col-3"></div>
-                <div class="alert alert-danger col-4">
-                    <button type="button" class="close" data-dismiss="alert">X</button>
-                    <h6>Erro ao Excluir o Produto! Entre em contato com o suporte!</h6>
-                </div>
+        <div class="row col-12">
+            <div class="col-3"></div>
+            <div class="alert alert-danger col-4">
+                <button type="button" class="close" data-dismiss="alert">X</button>
+                <h6>Erro ao Excluir o Produto! Entre em contato com o suporte!</h6>
             </div>
-        <?php }
+        </div>
+    <?php }
 
 endif;
 
@@ -92,43 +86,33 @@ if (isset($_POST['alterar'])) :
     $marca = $_POST['text_marca'];
     $numeroPatrimonio = $_POST['text_numeroPatrimonio'];
     $idCategoria = $_POST['text_categoriaSelecionada'];
-    $idDeparteamento = $_POST['text_departamentoSelecionado'];
-    $quantidade = $_POST['text_quantidade'];
-    $idDepartamentoProduto = $_POST['text_idDepartamentoProduto'];
-    $dataCadastro = $_POST['text_dataCadastro'];
-
+    
     $produto->setDescricao($descricao);
     $produto->setMarca($marca);
     $produto->setNumeroPatrimonio($numeroPatrimonio);
     $produto->setIdCategoria($idCategoria);
-    $produto->update($id);
     if ($produto->update($id)) {
-        $departamentoproduto->setQuantidade($quantidade);
-        $departamentoproduto->setIdProduto($id);
-        $departamentoproduto->setIdDepartamento($idDeparteamento);
-        $departamentoproduto->setDataCadastro($dataCadastro);
-
-        if ($departamentoproduto->update($idDepartamentoProduto)) {
+     
         ?>
-            <div class="row col-12">
-                <div class="col-3"></div>
-                <div class="alert alert-success col-4">
-                    <button type="button" class="close" data-dismiss="alert">X</button>
-                    <h6>Produto Alterado com Sucesso!</h6>
-                </div>
+        <div class="row col-12">
+            <div class="col-3"></div>
+            <div class="alert alert-success col-4">
+                <button type="button" class="close" data-dismiss="alert">X</button>
+                <h6>Produto Alterado com Sucesso!</h6>
             </div>
+        </div>
         <?php
-        } else {
+    } else {
         ?>
-            <div class="row col-12">
-                <div class="col-3"></div>
-                <div class="alert alert-danger col-4">
-                    <button type="button" class="close" data-dismiss="alert">X</button>
-                    <h6>Erro ao Alterar o Produto! Entre em contato com o suporte!</h6>
-                </div>
+        <div class="row col-12">
+            <div class="col-3"></div>
+            <div class="alert alert-danger col-4">
+                <button type="button" class="close" data-dismiss="alert">X</button>
+                <h6>Erro ao Alterar o Produto! Entre em contato com o suporte!</h6>
             </div>
+        </div>
 
-<?php }
+        <?php 
     }
 
 endif;
@@ -147,7 +131,7 @@ endif;
         </thead>
         <?php
         foreach ($produto->findAllProdutos() as $key => $value) :
-        ?>
+            ?>
             <tbody>
                 <tr>
                     <td><?php echo $value->descricao; ?></td>
@@ -163,14 +147,14 @@ endif;
                          '<?php echo $value->idDepartamento; ?>',
                          '<?php echo $value->id; ?>',
                          '<?php echo $value->idDepartamentoProduto; ?>')">Alterar</button>
-                        <form class="form_excluir" method="post" style="float: left; margin: 0 15px">
+                         <form class="form_excluir" method="post" style="float: left; margin: 0 15px">
                             <input type="hidden" name="id" value="<?php echo $value->id; ?>">
                             <button name="excluir" type="submit"  class="btn btn-danger">Excluir</button>
                         </form>
                     </td>
                 </tr>
             </tbody>
-        <?php
+            <?php
         endforeach; ?>
     </table>
 </div>
@@ -195,7 +179,7 @@ endif;
                                         <?php
                                         foreach ($categoria->findAll() as $key => $val) : ?>
                                             <option value="<?php echo ($val->id); ?>"> <?php echo $val->descricao; ?> </option>
-                                        <?php
+                                            <?php
                                         endforeach; ?>
                                     </select>
                                 </div>
@@ -220,7 +204,7 @@ endif;
                                     <input type="text" class="form-control" name="marca" required="required">
                                 </div>
                             </div>
-                             <div class="col-4">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label>Número de Patrimonio:</label>
                                     <input type="text" class="form-control" name="numeroPatrimonio" required="required">
@@ -262,7 +246,7 @@ endif;
                                         <?php
                                         foreach ($categoria->findAll() as $key => $val) : ?>
                                             <option value="<?php echo ($val->id); ?>"> <?php echo $val->descricao; ?> </option>
-                                        <?php
+                                            <?php
                                         endforeach; ?>
                                     </select>
                                 </div>
@@ -303,9 +287,9 @@ endif;
                             </div>
                             <div class="col-4"></div>
                         </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script src="js/produto.js"></script>
+    <script src="js/produto.js"></script>
