@@ -142,10 +142,6 @@ endif;
                 <th>Marca:</th>
                 <th>Número de Patrimônio:</th>
                 <th>Categora:</th>
-                <th>Quantidade:</th>
-                <th>Data Cadastro:</th>
-                <th>Departamento:</th>
-                <th>Empresa:</th>
                 <th>Ação:</th>
             </tr>
         </thead>
